@@ -1,0 +1,194 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    
+<Script>
+    var M_Eating = 0;
+    var T_Eating = 0;
+    var W_Eating= 0;
+    var Th_Eating =0;
+    var F_Eating =0;
+    
+    var M_Studying = 0;
+    var T_Studying = 0;
+    var W_Studying = 0;
+    var Th_Studying =0;
+    var F_Studying =0;
+    
+     var M_Workingout = 0;
+    var T_Workingout  = 0;
+    var W_Workingout  = 0;
+    var Th_Workingout  =0;
+    var F_Workingout  =0;
+    
+    var M_Entertain = 0;
+    var T_Entertain  = 0;
+    var W_Entertain  = 0;
+    var Th_Entertain =0;
+    var F_Entertain  =0;
+    
+    
+   
+
+    
+    
+    function myFunction(string,value,days) {
+        
+        if(days=="Monday"){
+              if(string=='eating'){
+                  M_Eating=M_Eating+parseInt(value);
+              }else if (string =='study'){
+                  M_Studying=M_Studying+parseInt(value);
+              }else if (string=='entertainment'){
+                  M_Entertain=M_Entertain+parseInt(value);
+              }else if (string=='workingout'){
+                M_Workingout=M_Workingout+parseInt(value);
+              }        
+            
+        }else if(days=="Tuesday"){
+               if(string=='eating'){
+                  T_Eating=T_Eating+parseInt(value);
+              }else if (string =='study'){
+                  T_Studying=T_Studying+parseInt(value);
+              }else if (string=='entertainment'){
+                  T_Entertain=T_Entertain+parseInt(value);
+              }else if (string=='workingout'){
+                T_Workingout=T_Workingout+parseInt(value);
+              }    
+            
+            
+        }else if(days=="Wednesday"){
+               if(string=='eating'){
+                  W_Eating=W_Eating+parseInt(value);
+              }else if (string =='study'){
+                  W_Studying=W_Studying+parseInt(value);
+              }else if (string=='entertainment'){
+                  W_Entertain=W_Entertain+parseInt(value);
+              }else if (string=='workingout'){
+                  W_Workingout=W_Workingout+parseInt(value);
+              }  
+        }else if(days=="Thusday"){
+               if(string=='eating'){
+                  Th_Eating=Th_Eating+parseInt(value);
+              }else if (string =='study'){
+                  Th_Studying=Th_Studying+parseInt(value);
+              }else if (string=='entertainment'){
+                  Th_Entertain=Th_Entertain+parseInt(value);
+              }else if (string=='workingout'){
+                  Th_Workingout=T_Workingout+parseInt(value);
+              }   
+    
+          }else if(days=="Friday"){
+              
+               if(string=='eating'){
+                  F_Eating=F_Eating+parseInt(value);
+              }else if (string =='study'){
+                  F_Studying=F_Studying+parseInt(value);
+              }else if (string=='entertainment'){
+                  F_Entertain=F_Entertain+parseInt(value);
+              }else if (string=='workingout'){
+                  F_Workingout=F_Workingout+parseInt(value);
+              }  
+            }
+    
+    }
+   </Script>
+
+<div id="mainRes">
+    <canvas id="myChart"></canvas>
+
+    {{#if dbresponse}}
+        {{#all dbresponse}}
+           
+           
+            <script>
+            myFunction("{{EventName}}"," {{Time}}","{{Days}}")</script>
+            <br>
+        {{/all}}
+    {{/if}}
+
+</div>
+
+
+<script>
+    
+    var ctx = document.getElementById("myChart").getContext('2d');
+    
+    
+ 
+    
+    
+    var data = {
+    labels: ["Eating", "Studying", "Chilling", "Working Out"],
+    datasets: [
+        {
+            label: "Monday",
+            backgroundColor: "rgba(179,181,198,0.2)",
+            borderColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(179,181,198,1)",
+            data: [M_Eating,M_Studying,M_Entertain,M_Workingout]
+        },
+        
+        
+        {
+            label: "Tuesday",
+            backgroundColor: "rgba(200,134,145,0.2)",
+            borderColor: "rgba(200,134,145,1)",
+            pointBackgroundColor: "rgba(200,134,145,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(200,134,145,1)",
+            data: [T_Eating,T_Studying,T_Entertain,T_Workingout]
+        },
+        
+        {
+            label: "Wednesday",
+            backgroundColor: "rgba(178,200,145,0.2)",
+            borderColor: "rgba(178,200,145,1)",
+            pointBackgroundColor: "rgba(178,200,145,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(178,200,145,1)",
+            data: [W_Eating,W_Studying,W_Entertain,W_Workingout]
+        },
+        
+        {
+            label: "Thusday",
+            backgroundColor: "rgba(173,133,186,0.2)",
+            borderColor: "rgba(173,133,186,1)",
+            pointBackgroundColor: "rgba(173,133,186,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(173,133,186,1)",
+            data: [Th_Eating,Th_Studying,Th_Entertain,Th_Workingout]
+        },
+         
+        {
+            label: "Friday",
+            backgroundColor: "rgba(228,153,105,0.2)",
+            borderColor: "rgba(228,153,105,1)",
+            pointBackgroundColor: "rgba(228,153,105,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(228,153,105,1)",
+            data: [F_Eating,F_Studying,F_Entertain,F_Workingout]
+        }
+             
+    ]
+};
+    
+    
+    
+    
+       var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: data
+});
+    
+    
+    
+</script>
+
+
+

@@ -1,0 +1,56 @@
+<div id="mainForm">
+    <div id="logo"></div>
+
+
+    <h3>Let's see how did you spend your weekdays</h3>
+    <form action="/formEvent" method="POST">
+
+       
+        <label for="EventName">Activities:
+            <select name="EventName" id="EventName">
+                <option value="eating">eating</option>
+                <option value="study">studying</option>
+                <option value="entertainment">chilling</option>
+                <option value="workingout">working out</option>
+            </select>
+        </label>
+
+        <br>
+        <br>
+     <label for="Time">Time(min):
+            <input type="text" name="Time" id="Time" value="0">
+     </label>
+        <br>
+        <br>
+
+<h3>Days</h3>
+        <label for="Monday">Monday
+            <input type="radio" name="Days" value="Monday" id="Monday" checked>
+        </label>
+        <label for="Tuesday">Tuesday
+            <input type="radio" name="Days" value="Tuesday" id="Tuesday">
+        </label>
+
+        <label for="Wednesday">Wednesday
+            <input type="radio" name="Days" value="Wednesday" id="Wednesday">
+        </label>
+        <label for="Thursday">Thursday
+            <input type="radio" name="Days" value="Thursday" id="Thursday">
+        </label>
+
+        <label for="Friday">Friday
+            <input type="radio" name="Days" value="Friday" id="Friday">
+        </label>
+       
+        <input type="submit" value="Submit" onclick="alert('event input');">
+
+    </form>
+</div>
+
+
+<br>
+<br>
+
+<form action="http://localhost:3000/displayAll">
+    <input type="submit" value="Report Overview" />
+</form>
