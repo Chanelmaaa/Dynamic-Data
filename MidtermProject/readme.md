@@ -11,10 +11,7 @@ Challenge:
 Adding up the multiple inputs of the time spending for the same activity in the same day.
 
 Next steps: 
-Adding the delete and update function;
-Figuring a way adding different weeks. 
- 
-Zeven’s advice: 
+(Zeven’s advice) 
 Adding more users 
 style the sheet
 
