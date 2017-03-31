@@ -51,6 +51,9 @@ var Events = sequelize.define('events', {
         Days: {
         type: Sequelize.STRING
     },
+        UserName: {
+        type: Sequelize.STRING
+    },
 });
 
 
@@ -139,22 +142,27 @@ server.route({
 });
 
 
+
+
+
 server.route({
     method: 'GET',
-    path: '/displayAll',
+    path: '/displayAll/{UserName}',
     handler: function (request, reply) {
-        Events.findAll().then(function (users) {
-            // projects will be an array of all User instances
-            //ctszonsole.log(users[0].monsterName);
-            var allUsers = JSON.stringify(users);
+        Events.findAll({
+            where: {
+                UserName: encodeURIComponent(request.params.UserName),
+            }
+        }).then(function (user) {
+          
+            var currentUser = JSON.stringify(user);
             reply.view('dbresponse', {
-                dbresponse: allUsers
+                dbresponse: currentUser
             });
+
         });
     }
 });
-
-
 
 
 

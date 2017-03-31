@@ -15,5 +15,8 @@ Adding the delete and update function;
 Figuring a way adding different weeks. 
  
 Zeven’s advice: 
-More users (one more page)
+Adding more users 
 style the sheet
+
+Update: 
+I styled my form and added one more column for the user's name, so the user could see their own report by the name. 

@@ -1,12 +1,19 @@
-<div id="mainForm">
+
+
+   <div id="mainForm">
     <div id="logo"></div>
 
 
-    <h3>Let's see how did you spend your weekdays</h3>
+    <h3>Let's See How Did you Spend Your Weekdays</h3>
     <form action="/formEvent" method="POST">
 
        
-        <label for="EventName">Activities:
+        <label for="Name">Name:
+            <input type="text" name="UserName" id="UserName">
+     </label>
+        <br>
+        <br>
+           <label for="EventName">Activities:
             <select name="EventName" id="EventName">
                 <option value="eating">eating</option>
                 <option value="study">studying</option>
@@ -41,16 +48,29 @@
         <label for="Friday">Friday
             <input type="radio" name="Days" value="Friday" id="Friday">
         </label>
-       
-        <input type="submit" value="Submit" onclick="alert('event input');">
+        
+<br>
+<br>
+        <input type="submit" value="Submit" onclick="alert('event input')">
 
     </form>
+    
+<br>
+<br>
+
+  View <input type="text" name="UserName1" id="UserName1">'s Report 
+ <br>
+    <br>   
+     
+  <button onclick='goto()';> Go </button> 
+<script>
+function goto() {
+    window.location = "http://localhost:3000/displayAll/"+document.getElementById('UserName1').value;
+}       
+</script>
 </div>
 
 
-<br>
-<br>
 
-<form action="http://localhost:3000/displayAll">
-    <input type="submit" value="Report Overview" />
-</form>
+
+

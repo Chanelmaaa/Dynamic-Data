@@ -1,0 +1,26 @@
+
+
+body{
+    background-image: url("../images/146H.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    font-family: sans-serif;
+    background-size: cover;
+   
+}
+
+#mainForm{
+    background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+
+
+
+
+
+
