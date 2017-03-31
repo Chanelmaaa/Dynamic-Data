@@ -12,8 +12,8 @@ Adding up the multiple inputs of the time spending for the same activity in the 
 
 Next steps: 
 (Zeven’s advice) 
-Adding more users 
-style the sheet
+1.Adding more users; 
+2.style the sheet
 
 Update: 
 I styled my form and added one more column for the user's name, so the user could see their own report by the name. 
