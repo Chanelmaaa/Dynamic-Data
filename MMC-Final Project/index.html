@@ -1,0 +1,72 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="require.js"></script>
+<script type="text/javascript" src="fuzzyset.js"></script>
+<script type="text/javascript" src="wordcache.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" />
+<style type="text/css">
+
+	.jumbotron {
+		background-color: #429742;
+		color: #fff;
+	}
+
+	.jumbotron p {
+		color: #aaa;
+	}
+
+	.jumbotron a {
+		color: #fff;
+	}
+
+</style>
+<script>
+	function ChooseContact(data)
+{
+ 
+   document.getElementById("alltext").value = data.value;
+}
+</script>
+</head>
+<body onload="startApp()">
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Moody Music Cloud</h1>
+			
+		</div>
+	</div>
+
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Choose Your Current Mood</h2>
+				<div class="form-group">
+				  <select id="name" name="name" onchange="ChooseContact(this);"> 
+					<option value="Happy Hits">Happy Hits</option> 
+					<option value="Relax&Unwind">Relax &Unwind</option> 
+					<option value="life Sucks">Life Sucks</option>
+					<option value="Wild&Free">Wild &Free</option>
+					</select>
+					<textarea class="form-control" id="alltext" rows="5" maxlength="500" style="display:none"></textarea>
+				</div>
+				<br>
+
+				<p>
+					<button class="btn btn-lg btn-primary btn-success" id="start" onchange="ChooseContact(this);">Create a Spotify playlist!</button>
+				</p>
+				<div id="status"></div>
+			</div>
+			<div class="col-md-6">
+				<h2>Corresponding Playlist</h2>
+				<div id="debug"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
